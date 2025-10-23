@@ -2,8 +2,8 @@ package org.example;
 
 public class Car {
     private String name;
-    private int horsePower;
-    private int weight;
+    private final int horsePower;
+    private final int weight;
     private float fuelLevel;
     private float fuelConsumption;
 
@@ -16,7 +16,7 @@ public class Car {
     }
 
     public void calculateFuelConsumption(){
-        this.fuelConsumption = (float) ((horsePower / 2f) + (weight / 2f))/100;
+        this.fuelConsumption = ((horsePower / 2f) + (weight / 2f))/100;
     }
 
     public void drive(int distance){
