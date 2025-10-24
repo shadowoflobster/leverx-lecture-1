@@ -62,7 +62,6 @@ public class Car {
     public void drive(int distance) {
         final float requiredFuel = (float) distance / 100f * fuelConsumption;
         if (engineRunning) {
-            float requiredFuel = (float) distance / 100f * fuelConsumption;
             if (requiredFuel < fuelLevel) {
                 fuelLevel -= requiredFuel;
                 System.out.println("You drove " + distance + "KM, " + fuelLevel + " Liters of fuel remaining.");
@@ -87,5 +86,10 @@ public class Car {
             this.fuelLevel += fuel;
             System.out.println("You added " + fuel + "L fuel");
         } else System.out.println("Please turn off your engine before refueling");
+        class FuelReport{
+            void print(){
+                System.out.println("Fuel added during refuel: "+fuel+"L" );
+            }
+        }
     }
 }
