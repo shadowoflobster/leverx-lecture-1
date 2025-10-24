@@ -25,6 +25,27 @@ public class Car {
         this.fuelConsumption = ((horsePower / 2f) + (weight / 2f))/100;
     }
 
+    //Inner non-static class
+    public class Engine{
+        public void start(){
+            if(!engineRunning){
+                engineRunning = true;
+                System.out.println("Engine started running");
+            }else
+                System.out.println("Engine is already running");
+        }
+
+        public void stop(){
+            if(engineRunning){
+               engineRunning = false;
+                System.out.println("Engine stopped running");
+            }else
+                System.out.println("Engine is already stopped");
+        }
+    }
+
+
+
     public void drive(int distance){
         float requiredFuel = (float) distance / 100f * fuelConsumption;
         if(requiredFuel < fuelLevel){
