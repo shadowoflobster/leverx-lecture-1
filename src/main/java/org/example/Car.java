@@ -44,6 +44,17 @@ public class Car {
         }
     }
 
+    //Inner static class
+    public static class Manual {
+        public void print() {
+            System.out.print("Welcome to manual\n " +
+                    "To start engine please use Car.Engine.start method\n" +
+                    "To stop engine please use Car.Engine.stop method \n" +
+                    "To drive car use Car.drive(distance(int)) method (Remember! Engine must be on) \n" +
+                    "To refuel car use Car.refuel(fuel(float)) method (Remember! Engine must be off)");
+        }
+    }
+
 
     public void drive(int distance) {
         if (engineRunning) {
