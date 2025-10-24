@@ -11,6 +11,7 @@ public class Car {
     private final int weight;
     private float fuelLevel;
     private float fuelConsumption;
+    private boolean engineRunning = false;
 
     public Car(String name, int horsePower, int weight, int fuelLevel){
         this.name=name;
