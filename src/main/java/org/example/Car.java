@@ -60,6 +60,7 @@ public class Car {
 
 
     public void drive(int distance) {
+        final float requiredFuel = (float) distance / 100f * fuelConsumption;
         if (engineRunning) {
             float requiredFuel = (float) distance / 100f * fuelConsumption;
             if (requiredFuel < fuelLevel) {
