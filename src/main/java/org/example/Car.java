@@ -51,7 +51,7 @@ public class Car {
                     "To start engine please use Engine.start method\n" +
                     "To stop engine please use Engine.stop method \n" +
                     "To drive car use Car.drive(distance(int)) method (Remember! Engine must be on) \n" +
-                    "To refuel car use Car.refuel(fuel(float)) method (Remember! Engine must be off)");
+                    "To refuel car use Car.refuel(fuel(float)) method (Remember! Engine must be off) \n");
         }
     }
 
