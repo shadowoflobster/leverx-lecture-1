@@ -89,14 +89,17 @@ public class Car {
         if (!engineRunning) {
             this.fuelLevel += fuel;
             System.out.println("You added " + fuel + "L fuel");
-        } else System.out.println("Please turn off your engine before refueling");
-        class FuelReport{
-            void print(){
-                System.out.println("Fuel added during refuel: "+fuel+"L" );
-            }
-        }
 
-        FuelReport report = new FuelReport();
-        report.print();
+            //Local class
+            class FuelReport{
+                void print(){
+                    System.out.println("Fuel added during refuel: "+fuel+"L" );
+                }
+            }
+
+            FuelReport report = new FuelReport();
+            report.print();
+        } else System.out.println("Please turn off your engine before refueling");
+
     }
 }
