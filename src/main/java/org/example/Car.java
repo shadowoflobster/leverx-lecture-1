@@ -78,6 +78,8 @@ public class Car {
                 System.out.println("Distance driven during trip: "+distance+"km");
             }
         }
+        DriveReport report = new DriveReport();
+        report.print();
 
     }
 
@@ -91,5 +93,8 @@ public class Car {
                 System.out.println("Fuel added during refuel: "+fuel+"L" );
             }
         }
+
+        FuelReport report = new FuelReport();
+        report.print();
     }
 }
