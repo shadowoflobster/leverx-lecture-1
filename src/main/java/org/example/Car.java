@@ -25,24 +25,27 @@ public class Car {
         this.fuelConsumption = ((horsePower / 2f) + (weight / 2f)) / 100;
     }
 
-    //Inner non-static class
-//    public class Engine {
-//        public void start() {
-//            if (!engineRunning) {
-//                engineRunning = true;
-//                System.out.println("Engine started running");
-//            } else
-//                System.out.println("Engine is already running");
-//        }
-//
-//        public void stop() {
-//            if (engineRunning) {
-//                engineRunning = false;
-//                System.out.println("Engine stopped running");
-//            } else
-//                System.out.println("Engine is already stopped");
-//        }
-//    }
+    //Inner non-static class replaced with anonymous class
+    Engine engine = new Engine() {
+        @Override
+        public void start() {
+            if (!engineRunning) {
+                engineRunning = true;
+                System.out.println("Engine started running");
+            } else
+                System.out.println("Engine is already running");
+        }
+
+
+        @Override
+        public void stop() {
+            if (engineRunning) {
+                engineRunning = false;
+                System.out.println("Engine stopped running");
+            } else
+                System.out.println("Engine is already stopped");
+        }
+        };
 
     //Inner static class
     public static class Manual {
