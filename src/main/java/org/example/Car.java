@@ -88,15 +88,12 @@ public class Car {
             this.fuelLevel += fuel;
             System.out.println("You added " + fuel + "L fuel");
 
-            //Local class
-            class FuelReport{
-                void print(){
+            //Local class replaced by lambda function
+            Report refuelReport = () ->{
                     System.out.println("Fuel added during refuel: "+fuel+"L" );
-                }
-            }
+                };
 
-            FuelReport report = new FuelReport();
-            report.print();
+            refuelReport.print();
         } else System.out.println("Please turn off your engine before refueling");
 
     }
