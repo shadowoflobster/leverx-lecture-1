@@ -26,23 +26,23 @@ public class Car {
     }
 
     //Inner non-static class
-    public class Engine {
-        public void start() {
-            if (!engineRunning) {
-                engineRunning = true;
-                System.out.println("Engine started running");
-            } else
-                System.out.println("Engine is already running");
-        }
-
-        public void stop() {
-            if (engineRunning) {
-                engineRunning = false;
-                System.out.println("Engine stopped running");
-            } else
-                System.out.println("Engine is already stopped");
-        }
-    }
+//    public class Engine {
+//        public void start() {
+//            if (!engineRunning) {
+//                engineRunning = true;
+//                System.out.println("Engine started running");
+//            } else
+//                System.out.println("Engine is already running");
+//        }
+//
+//        public void stop() {
+//            if (engineRunning) {
+//                engineRunning = false;
+//                System.out.println("Engine stopped running");
+//            } else
+//                System.out.println("Engine is already stopped");
+//        }
+//    }
 
     //Inner static class
     public static class Manual {
@@ -66,17 +66,15 @@ public class Car {
                 fuelLevel -= requiredFuel;
                 System.out.println("You drove " + distance + "KM, " + fuelLevel + " Liters of fuel remaining.");
 
-                //Local class
-                class DriveReport{
-                    void print(){
+                //Local class replaced by Lambda function
+                Report driveReport = () -> {
                         //requiredFuel is final so it can be accessed by local class
-                        System.out.println("Fuel consumed during trip: "+requiredFuel+"L" );
+                        System.out.println("Fuel consumed during trip: " + requiredFuel + "L");
                         //distance method parameter is effectively final
-                        System.out.println("Distance driven during trip: "+distance+"km");
-                    }
-                }
-                DriveReport report = new DriveReport();
-                report.print();
+                        System.out.println("Distance driven during trip: " + distance + "km");
+                };
+                driveReport.print();
+
             } else
                 System.out.println("You don't have enough fuel. (Required: " + requiredFuel + "L, your fuel level: " + fuelLevel + "L)");
         } else System.out.println("Engine must be running to drive car");
