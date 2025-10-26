@@ -47,9 +47,8 @@ public class Car {
         }
         };
 
-    //Inner static class
-    public static class Manual {
-        public void print() {
+    //Inner static class replaced with lambda function
+    Manual manual = () -> {
             System.out.print("""
                     Welcome to manual
                      \
@@ -58,8 +57,7 @@ public class Car {
                     To drive car use Car.drive(distance(int)) method (Remember! Engine must be on)\s
                     To refuel car use Car.refuel(fuel(float)) method (Remember! Engine must be off)\s
                     """);
-        }
-    }
+    };
 
 
     public void drive(int distance) {
