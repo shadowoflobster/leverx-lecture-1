@@ -16,14 +16,20 @@ javac src/main/java/org/example/Main.java
 java -cp src/main/java org.example.Main
 ~~~
 
-## 2.Instructions to BUILD and RUN additional branch
+## 2.Instructions to BUILD and RUN additional branches
 
-### This branch uses external library Lombok
+### These branches use external library Lombok
 
 ## 2.1 Move to external-library branch
 
 ~~~bash
 git checkout feature/external-library
+~~~
+
+## 2.1 Move to anonymous-classes branch
+
+~~~bash
+git checkout feature/anonymous-classes
 ~~~
 
 ## 2.2 Compile using Maven
@@ -36,6 +42,8 @@ mvn compile
 ~~~bash
 mvn exec:java
 ~~~
+
+
 
 
 
