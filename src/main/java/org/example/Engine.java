@@ -1,6 +1,7 @@
 package org.example;
 
 public interface Engine {
-        void start();
-        void stop();
+    void start();
+
+    void stop();
 }
