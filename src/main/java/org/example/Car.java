@@ -42,21 +42,22 @@ public class Car {
             if (engineRunning) {
                 engineRunning = false;
                 System.out.println("Engine stopped running");
-            } else
+            } else {
                 System.out.println("Engine is already stopped");
+            }
         }
-        };
+    };
 
     //Inner static class replaced with lambda function
     Manual manual = () -> {
-            System.out.print("""
-                    Welcome to manual
-                     \
-                    To start engine please use Engine.start method
-                    To stop engine please use Engine.stop method\s
-                    To drive car use Car.drive(distance(int)) method (Remember! Engine must be on)\s
-                    To refuel car use Car.refuel(fuel(float)) method (Remember! Engine must be off)\s
-                    """);
+        System.out.print("""
+                Welcome to manual
+                 \
+                To start engine please use Engine.start method
+                To stop engine please use Engine.stop method\s
+                To drive car use Car.drive(distance(int)) method (Remember! Engine must be on)\s
+                To refuel car use Car.refuel(fuel(float)) method (Remember! Engine must be off)\s
+                """);
     };
 
 
@@ -69,17 +70,19 @@ public class Car {
 
                 //Local class replaced by Lambda function
                 Report driveReport = () -> {
-                        //requiredFuel is final so it can be accessed by local class
-                        System.out.println("Fuel consumed during trip: " + requiredFuel + "L");
-                        //distance method parameter is effectively final
-                        System.out.println("Distance driven during trip: " + distance + "km");
+                    //requiredFuel is final so it can be accessed by local class
+                    System.out.println("Fuel consumed during trip: " + requiredFuel + "L");
+                    //distance method parameter is effectively final
+                    System.out.println("Distance driven during trip: " + distance + "km");
                 };
                 driveReport.print();
 
-            } else
+            } else {
                 System.out.println("You don't have enough fuel. (Required: " + requiredFuel + "L, your fuel level: " + fuelLevel + "L)");
-        } else System.out.println("Engine must be running to drive car");
-
+            }
+        } else {
+            System.out.println("Engine must be running to drive car");
+        }
 
 
     }
@@ -90,12 +93,14 @@ public class Car {
             System.out.println("You added " + fuel + "L fuel");
 
             //Local class replaced by lambda function
-            Report refuelReport = () ->{
-                    System.out.println("Fuel added during refuel: "+fuel+"L" );
-                };
+            Report refuelReport = () -> {
+                System.out.println("Fuel added during refuel: " + fuel + "L");
+            };
 
             refuelReport.print();
-        } else System.out.println("Please turn off your engine before refueling");
+        } else {
+            System.out.println("Please turn off your engine before refueling");
+        }
 
     }
 }
