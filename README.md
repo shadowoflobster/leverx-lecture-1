@@ -32,15 +32,20 @@ git checkout feature/external-library
 git checkout feature/anonymous-classes
 ~~~
 
-## 2.2 Compile using Maven
+## 2.2 Compile program using javac
 
 ~~~bash
-mvn compile
+javac -d out -cp "lib/lombok.jar" src/main/java/org/example/*.java
 ~~~
 
-## 2.3 Run using exec-maven plugin
+## 2.3 Run using java
+ #### Windows:
 ~~~bash
-mvn exec:java
+java -cp "out;lib/lombok.jar" org.example.Main
+~~~
+ #### Windows:
+~~~bash
+java -cp "out:lib/lombok.jar" org.example.Main
 ~~~
 
 
