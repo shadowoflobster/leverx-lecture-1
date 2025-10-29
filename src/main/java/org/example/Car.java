@@ -5,6 +5,10 @@ import lombok.Setter;
 
 @Getter
 public class Car {
+    private static final float HORSEPOWER_DIVIDER = 2f;
+    private static final float WEIGHT_DIVIDER = 2f;
+    private static final float DISTANCE_DIVIDER_TO_CALCULATE_FUEL = 100f;
+
     @Setter
     private String name;
     private final int horsePower;
@@ -22,7 +26,7 @@ public class Car {
     }
 
     public void calculateFuelConsumption() {
-        this.fuelConsumption = ((horsePower / 2f) + (weight / 2f)) / 100;
+        this.fuelConsumption = ((horsePower / HORSEPOWER_DIVIDER) + (weight / WEIGHT_DIVIDER)) / 100;
     }
 
     //Inner non-static class
@@ -61,7 +65,7 @@ public class Car {
 
     public void drive(int distance) {
         if (engineRunning) {
-            final float requiredFuel = (float) distance / 100f * fuelConsumption;
+            final float requiredFuel = (float) distance / DISTANCE_DIVIDER_TO_CALCULATE_FUEL * fuelConsumption;
             if (requiredFuel < fuelLevel) {
                 fuelLevel -= requiredFuel;
                 System.out.println("You drove " + distance + "KM, " + fuelLevel + " Liters of fuel remaining.");
