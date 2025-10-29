@@ -67,20 +67,22 @@ public class Car {
                 System.out.println("You drove " + distance + "KM, " + fuelLevel + " Liters of fuel remaining.");
 
                 //Local class
-                class DriveReport{
-                    void print(){
+                class DriveReport {
+                    void print() {
                         //requiredFuel is final so it can be accessed by local class
-                        System.out.println("Fuel consumed during trip: "+requiredFuel+"L" );
+                        System.out.println("Fuel consumed during trip: " + requiredFuel + "L");
                         //distance method parameter is effectively final
-                        System.out.println("Distance driven during trip: "+distance+"km");
+                        System.out.println("Distance driven during trip: " + distance + "km");
                     }
                 }
                 DriveReport report = new DriveReport();
                 report.print();
-            } else
+            } else {
                 System.out.println("You don't have enough fuel. (Required: " + requiredFuel + "L, your fuel level: " + fuelLevel + "L)");
-        } else System.out.println("Engine must be running to drive car");
-
+            }
+        } else {
+            System.out.println("Engine must be running to drive car");
+        }
 
 
     }
@@ -91,15 +93,17 @@ public class Car {
             System.out.println("You added " + fuel + "L fuel");
 
             //Local class
-            class FuelReport{
-                void print(){
-                    System.out.println("Fuel added during refuel: "+fuel+"L" );
+            class FuelReport {
+                void print() {
+                    System.out.println("Fuel added during refuel: " + fuel + "L");
                 }
             }
 
             FuelReport report = new FuelReport();
             report.print();
-        } else System.out.println("Please turn off your engine before refueling");
+        } else {
+            System.out.println("Please turn off your engine before refueling");
+        }
 
     }
 }
