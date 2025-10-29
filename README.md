@@ -43,7 +43,7 @@ javac -d out -cp "lib/lombok.jar" src/main/java/org/example/*.java
 ~~~bash
 java -cp "out;lib/lombok.jar" org.example.Main
 ~~~
- #### Windows:
+ #### Mac / Linux:
 ~~~bash
 java -cp "out:lib/lombok.jar" org.example.Main
 ~~~
