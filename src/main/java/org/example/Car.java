@@ -7,7 +7,7 @@ import lombok.Setter;
 public class Car {
     private static final float HORSEPOWER_DIVIDER = 2f;
     private static final float WEIGHT_DIVIDER = 2f;
-    private static final float DISTANCE_DIVIDER_TO_CALCULATE_FUEL = 2f;
+    private static final float DISTANCE_DIVIDER_TO_CALCULATE_FUEL = 100f;
 
 
 
